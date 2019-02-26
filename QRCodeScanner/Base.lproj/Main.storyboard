@@ -31,6 +31,9 @@
                                 <rect key="frame" x="132" y="293" width="150" height="150"/>
                                 <color key="tintColor" red="0.99293047189712524" green="0.8161504864692688" blue="0.38141846656799316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="reticle"/>
+                                <connections>
+                                    <segue destination="qJL-do-dy6" kind="presentation" id="ewv-Kc-Mog"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89906269309999998" green="0.3656401634" blue="0.27815878389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,8 +50,72 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--QR Scanner View Controller-->
+        <scene sceneID="KPL-EE-sDG">
+            <objects>
+                <viewController id="qJL-do-dy6" userLabel="QR Scanner View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OUU-tu-Kfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8U-g2-oJn" userLabel="Topbar">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ8-se-vOj" userLabel="Scan Label">
+                                        <rect key="frame" x="185" y="38" width="44" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAp-c2-Equ" userLabel="Close Button">
+                                        <rect key="frame" x="15" y="39" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="Bu3-Uo-zCh"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <state key="normal" image="cross"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4X0-Ur-0js"/>
+                                    <constraint firstItem="mZ8-se-vOj" firstAttribute="centerX" secondItem="c8U-g2-oJn" secondAttribute="centerX" id="6Ta-10-xHj"/>
+                                    <constraint firstAttribute="bottom" secondItem="eAp-c2-Equ" secondAttribute="bottom" constant="13" id="PRu-C4-3Yi"/>
+                                    <constraint firstItem="eAp-c2-Equ" firstAttribute="leading" secondItem="c8U-g2-oJn" secondAttribute="leading" constant="15" id="c0C-kh-oX7"/>
+                                    <constraint firstItem="eAp-c2-Equ" firstAttribute="top" secondItem="c8U-g2-oJn" secondAttribute="top" constant="39" id="gQL-WG-e43"/>
+                                    <constraint firstAttribute="bottom" secondItem="mZ8-se-vOj" secondAttribute="bottom" constant="8" id="od0-g4-HfD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOi-bd-u0E" userLabel="Message Label">
+                                <rect key="frame" x="0.0" y="696" width="414" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4zU-in-9IV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ffi-Dl-Oyx" firstAttribute="bottom" secondItem="UOi-bd-u0E" secondAttribute="bottom" id="4Dg-Dc-nlu"/>
+                            <constraint firstItem="ffi-Dl-Oyx" firstAttribute="trailing" secondItem="UOi-bd-u0E" secondAttribute="trailing" id="Boj-yU-eg5"/>
+                            <constraint firstItem="c8U-g2-oJn" firstAttribute="leading" secondItem="OUU-tu-Kfe" secondAttribute="leading" id="DQe-q9-bMU"/>
+                            <constraint firstItem="ffi-Dl-Oyx" firstAttribute="trailing" secondItem="c8U-g2-oJn" secondAttribute="trailing" id="Xjr-JF-i0C"/>
+                            <constraint firstItem="c8U-g2-oJn" firstAttribute="top" secondItem="OUU-tu-Kfe" secondAttribute="top" id="sSw-Vb-nCs"/>
+                            <constraint firstItem="UOi-bd-u0E" firstAttribute="leading" secondItem="ffi-Dl-Oyx" secondAttribute="leading" id="zdf-YB-nte"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ffi-Dl-Oyx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWr-tK-CfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065.217391304348" y="131.25"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cross" width="40" height="40"/>
         <image name="reticle" width="150" height="150"/>
     </resources>
 </document>
