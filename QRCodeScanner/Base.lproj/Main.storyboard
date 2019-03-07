@@ -53,7 +53,7 @@
         <!--QR Scanner View Controller-->
         <scene sceneID="KPL-EE-sDG">
             <objects>
-                <viewController id="qJL-do-dy6" userLabel="QR Scanner View Controller" sceneMemberID="viewController">
+                <viewController id="qJL-do-dy6" userLabel="QR Scanner View Controller" customClass="QRScannerViewController" customModule="QRCodeScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OUU-tu-Kfe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +74,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="closeViewController:" destination="qJL-do-dy6" eventType="touchUpInside" id="5nv-iJ-W6J"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -108,6 +111,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ffi-Dl-Oyx"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="UOi-bd-u0E" id="3bS-H1-abk"/>
+                        <outlet property="topbar" destination="c8U-g2-oJn" id="kgw-Zw-J22"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWr-tK-CfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
